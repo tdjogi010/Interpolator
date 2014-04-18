@@ -168,12 +168,10 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/tv_y"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:layout_alignLeft="@+id/textView8"
             android:layout_alignStart="@+id/textView8"
             android:layout_alignTop="@+id/textView6"
-
-
             android:layout_alignEnd="@+id/et_x"
             android:layout_alignParentEnd="true"
             android:layout_above="@+id/textView7" />
