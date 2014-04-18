@@ -2,6 +2,8 @@ package com.mac.interpolator.interpolator;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,12 +13,10 @@ import android.view.View.OnClickListener;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class Main_interpolator extends Activity implements OnClickListener {
+public class Main_interpolator extends Activity implements TextWatcher {
 
     EditText y2,y1,x2,x1,x;
     TextView y;
-    Button go;
-    RelativeLayout rl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +28,7 @@ public class Main_interpolator extends Activity implements OnClickListener {
         x2 = (EditText) findViewById(R.id.et_x2);
         x1 = (EditText) findViewById(R.id.et_x1);
         x = (EditText) findViewById(R.id.et_x);
-        y = (TextView) findViewById(R.id.et_y);
-        go= (Button) findViewById(R.id.b_go);
-        rl = (RelativeLayout) findViewById(R.id.lay_main);
-        rl.setHorizontalScrollBarEnabled(true);
+        y = (TextView) findViewById(R.id.tv_y);
 
         y2.setText("0");
         y1.setText("0");
@@ -39,13 +36,13 @@ public class Main_interpolator extends Activity implements OnClickListener {
         x1.setText("0");
         x.setText("0");
 
-        go.setOnClickListener(this);
 
-        y2.setOnClickListener(this);
-       /* y1.setOnClickListener(this);
-        x2.setOnClickListener(this);
-        x1.setOnClickListener(this);
-        x.setOnClickListener(this);*/
+
+        y2.addTextChangedListener(this) ;
+        y1.addTextChangedListener(this) ;
+        x2.addTextChangedListener(this) ;
+        x1.addTextChangedListener(this) ;
+        x.addTextChangedListener(this) ;
 
     }
 
@@ -70,8 +67,14 @@ public class Main_interpolator extends Activity implements OnClickListener {
         return super.onOptionsItemSelected(item);
     }
 
+
     @Override
-    public void onClick(View v) {
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
 
         float vy2= Float.parseFloat(y2.getText().toString());
         float vy1= Float.parseFloat(y1.getText().toString());
@@ -83,4 +86,11 @@ public class Main_interpolator extends Activity implements OnClickListener {
 
         y.setText(""+vy);
     }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
+    }
+
 }
+
