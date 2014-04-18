@@ -6,9 +6,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.EditText;
-import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 public class Main_interpolator extends Activity implements TextWatcher {
@@ -28,7 +26,6 @@ public class Main_interpolator extends Activity implements TextWatcher {
         x = (EditText) findViewById(R.id.et_x);
         y = (TextView) findViewById(R.id.tv_y);
 
-<<<<<<< HEAD
         y2.setText("0");
         y1.setText("0");
         x2.setText("0");
@@ -42,14 +39,6 @@ public class Main_interpolator extends Activity implements TextWatcher {
         x2.addTextChangedListener(this) ;
         x1.addTextChangedListener(this) ;
         x.addTextChangedListener(this) ;
-=======
-
-        y2.setOnClickListener(this);
-        y1.setOnClickListener(this);
-        x2.setOnClickListener(this);
-        x1.setOnClickListener(this);
-        x.setOnClickListener(this);
->>>>>>> 108567d9e98162df2753d5eb954127bfdcdfaaf0
 
     }
 
@@ -81,7 +70,6 @@ public class Main_interpolator extends Activity implements TextWatcher {
     }
 
     @Override
-<<<<<<< HEAD
     public void onTextChanged(CharSequence s, int start, int before, int count) {
 
         float vy2= Float.parseFloat(y2.getText().toString());
@@ -93,10 +81,6 @@ public class Main_interpolator extends Activity implements TextWatcher {
         float vy=(vy2-vy1)*(vx-vx1)/(vx2-vx1) + vy1;
 
         y.setText(""+vy);
-=======
-    public void onClick(View v) {
-        //y.setText((y2.getText()-y1.getText())*(x.getText()-x1.getText())/(x2.getText()-x1.getText()));
->>>>>>> 108567d9e98162df2753d5eb954127bfdcdfaaf0
     }
 
     @Override

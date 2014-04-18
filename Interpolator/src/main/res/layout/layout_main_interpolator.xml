@@ -172,11 +172,8 @@
             android:layout_alignLeft="@+id/textView8"
             android:layout_alignStart="@+id/textView8"
             android:layout_alignTop="@+id/textView6"
-<<<<<<< HEAD
-            android:layout_alignRight="@+id/tv_y"
-=======
-            android:layout_alignRight="@+id/et_x"
->>>>>>> 108567d9e98162df2753d5eb954127bfdcdfaaf0
+
+
             android:layout_alignEnd="@+id/et_x"
             android:layout_alignParentEnd="true"
             android:layout_above="@+id/textView7" />
