@@ -88,7 +88,7 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
+            android:inputType="numberDecimal|numberSigned|numberSigned"
             android:ems="10"
             android:id="@+id/et_x1"
             android:layout_above="@+id/tv_y1"
@@ -97,7 +97,7 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
+            android:inputType="numberDecimal|numberSigned"
             android:ems="10"
             android:id="@+id/et_y1"
             android:layout_above="@+id/tv_x2"
@@ -107,7 +107,7 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
+            android:inputType="numberDecimal|numberSigned"
             android:ems="10"
             android:id="@+id/et_x2"
             android:layout_alignBottom="@+id/tv_x2"
@@ -117,7 +117,7 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
+            android:inputType="numberDecimal|numberSigned"
             android:ems="10"
             android:id="@+id/et_y2"
             android:layout_alignBottom="@+id/tv_y2"
@@ -127,7 +127,7 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
+            android:inputType="numberDecimal|numberSigned"
             android:ems="10"
             android:id="@+id/et_x"
             android:layout_alignBottom="@+id/tv_x"
@@ -139,6 +139,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Developers"
+            android:textColor="#0404B4"
             android:id="@+id/textView7"
             android:layout_below="@+id/textView6"
             android:layout_centerHorizontal="true"
@@ -150,6 +151,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Mobile App Club"
             android:id="@+id/textView8"
+            android:textStyle="bold"
             android:layout_marginTop="5dp"
             android:layout_below="@+id/textView7"
             android:layout_centerHorizontal="true" />
@@ -168,12 +170,13 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/tv_y"
-            android:gravity="center"
+            android:gravity="center_horizontal"
             android:layout_alignLeft="@+id/textView8"
             android:layout_alignStart="@+id/textView8"
             android:layout_alignTop="@+id/textView6"
             android:layout_alignEnd="@+id/et_x"
             android:layout_alignParentEnd="true"
+            android:layout_marginLeft="5dp"
             android:layout_above="@+id/textView7" />
 
     </RelativeLayout>

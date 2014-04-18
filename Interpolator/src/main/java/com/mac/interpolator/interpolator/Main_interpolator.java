@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -79,8 +80,7 @@ public class Main_interpolator extends Activity implements TextWatcher {
         float vx= Float.parseFloat(x.getText().toString());
 
         float vy=(vy2-vy1)*(vx-vx1)/(vx2-vx1) + vy1;
-
-        y.setText(""+vy);
+        y.setText("" + vy);
     }
 
     @Override
