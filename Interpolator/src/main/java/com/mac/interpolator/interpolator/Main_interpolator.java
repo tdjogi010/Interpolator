@@ -67,17 +67,7 @@ public class Main_interpolator extends Activity implements TextWatcher {
 
     @Override
     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-    }
-
-    @Override
-    public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-        if(y2.getText()==null || y1.getText()==null || x1.getText()==null || x2.getText()==null|| x.getText()==null || y2.length()==0
-                || y1.length()==0 || x2.length()==0 || x1.length()==0 || x.length()==0 ) {
-            y.setText("");
-        }
-        else{
+        try {
             float vy2 = Float.parseFloat(y2.getText().toString());
             float vy1 = Float.parseFloat(y1.getText().toString());
             float vx2 = Float.parseFloat(x2.getText().toString());
@@ -86,7 +76,15 @@ public class Main_interpolator extends Activity implements TextWatcher {
 
             float vy = (vy2 - vy1) * (vx - vx1) / (vx2 - vx1) + vy1;
             y.setText("" + vy);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            y.setText("");
         }
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
     }
 
     @Override
