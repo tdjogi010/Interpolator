@@ -68,10 +68,6 @@ public class Main_interpolator extends Activity implements TextWatcher {
                 Intent about = new Intent(Main_interpolator.this,About.class);
                 startActivity(about);
                 return true;
-            case R.id.about1:
-                Intent main = new Intent(Main_interpolator.this,About.class);
-                startActivity(main);
-                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

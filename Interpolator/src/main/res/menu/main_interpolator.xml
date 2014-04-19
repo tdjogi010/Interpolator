@@ -5,16 +5,4 @@
         android:icon="@drawable/information1"
         android:showAsAction="always"
         android:title="about"/>
-
-    <item
-        android:id="@+id/a_More"
-        android:icon="@drawable/abc_ic_menu_moreoverflow_normal_holo_light"
-        android:showAsAction="always"
-        android:title="More" >
-        <menu>
-            <item android:id="@+id/about1"
-                android:icon="@drawable/information1"
-                android:title="about"/>
-        </menu>
-    </item>
 </menu>
