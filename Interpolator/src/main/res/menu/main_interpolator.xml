@@ -2,7 +2,7 @@
     xmlns:Action_Bar="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/about"
-        android:icon="@drawable/information1"
+        android:icon="@drawable/ic_action_about"
         android:showAsAction="always"
-        android:title="about"/>
+        android:title="About"/>
 </menu>
