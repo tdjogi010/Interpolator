@@ -1,7 +1,10 @@
 package com.mac.interpolator.interpolator;
 
+import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Gravity;
@@ -17,8 +20,10 @@ public class Main_interpolator extends Activity implements TextWatcher {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
+        super.onCreate(savedInstanceState);
+        ActionBar actionbar=getActionBar();
+        actionbar.show();
         setContentView(R.layout.layout_main_interpolator);
         y2 = (EditText) findViewById(R.id.et_y2);
         y1 = (EditText) findViewById(R.id.et_y1);
@@ -49,7 +54,7 @@ public class Main_interpolator extends Activity implements TextWatcher {
 
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_interpolator, menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -58,10 +63,19 @@ public class Main_interpolator extends Activity implements TextWatcher {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id) {
+            case R.id.about:
+                Intent about = new Intent(Main_interpolator.this,About.class);
+                startActivity(about);
+                return true;
+            case R.id.about1:
+                Intent main = new Intent(Main_interpolator.this,About.class);
+                startActivity(main);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
+
     }
 
 
