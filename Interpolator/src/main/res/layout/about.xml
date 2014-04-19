@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="About"
+        android:textSize="35dp"
         android:textColor="#00FFFF"
         android:textStyle="bold"
         android:id="@+id/textView"
@@ -29,7 +30,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:textColor="#FFFFFF"
+        android:textSize="19dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:paddingLeft="@dimen/padding"
+        android:paddingRight="@dimen/padding"
+        android:lineSpacingExtra="2dp"
         android:text="@string/about_info1"
         android:gravity="center" />
     <TextView
@@ -38,7 +43,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:textColor="#FFFFFF"
+        android:textSize="19dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:paddingLeft="@dimen/padding"
+        android:paddingRight="@dimen/padding"
+        android:lineSpacingExtra="2dp"
         android:text="@string/about_info2"
         android:gravity="center" />
 
@@ -49,23 +58,37 @@
         android:text="Credits"
         android:id="@+id/textView3"
         android:textColor="#00FFFF"
-        android:layout_marginTop="40dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Mudit Dangi,Tejas Jogi"
+        android:text="Mudit Dangi"
         android:id="@+id/textView4"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-        android:layout_marginTop="5dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_marginTop="3dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="19dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Tejas Jogi"
+        android:id="@+id/textView10"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginTop="1dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="19dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Mentored By"
+        android:textSize="20dp"
         android:id="@+id/textView5"
         android:textColor="#00FFFF"
         android:layout_marginTop="15dp"
@@ -77,8 +100,9 @@
         android:text="Ayush Kumar"
         android:id="@+id/textView6"
         android:textColor="#FFFFFF"
+        android:textSize="19dp"
         android:textStyle="bold"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="2dp"
         android:layout_marginBottom="15dp"
         android:layout_gravity="center_horizontal" />
         </LinearLayout>

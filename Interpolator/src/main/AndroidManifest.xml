@@ -21,6 +21,9 @@
             android:name=".About"
             android:label="About"
             android:parentActivityName="com.mac.interpolator.interpolator.Main_interpolator" />
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.myfirstapp.MainActivity" />
 
     </application>
 
