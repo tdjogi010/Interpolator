@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Interpolator.iml" filepath="$PROJECT_DIR$/Interpolator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Interpolator/Interpolator-Interpolator.iml" filepath="$PROJECT_DIR$/Interpolator/Interpolator-Interpolator.iml" />
       <module fileurl="file://$PROJECT_DIR$/Interpolator_final.iml" filepath="$PROJECT_DIR$/Interpolator_final.iml" />
       <module fileurl="file://$PROJECT_DIR$/Interpolator_layout.iml" filepath="$PROJECT_DIR$/Interpolator_layout.iml" />
       <module fileurl="file://$PROJECT_DIR$/interpolator.iml" filepath="$PROJECT_DIR$/interpolator.iml" />
