@@ -27,11 +27,11 @@ public class Main_interpolator extends Activity implements TextWatcher {
         x = (EditText) findViewById(R.id.et_x);
         y = (TextView) findViewById(R.id.tv_y);
 
-        y2.setText("0");
-        y1.setText("0");
-        x2.setText("0");
-        x1.setText("0");
-        x.setText("0");
+        y2.setHint("0");
+        y1.setHint("0");
+        x2.setHint("0");
+        x1.setHint("0");
+        x.setHint("0");
 
 
 
