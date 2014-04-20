@@ -99,7 +99,19 @@ public class Main_interpolator extends Activity implements TextWatcher {
 
     @Override
     public void afterTextChanged(Editable s) {
+        try {
+            float vy2 = Float.parseFloat(y2.getText().toString());
+            float vy1 = Float.parseFloat(y1.getText().toString());
+            float vx2 = Float.parseFloat(x2.getText().toString());
+            float vx1 = Float.parseFloat(x1.getText().toString());
+            float vx = Float.parseFloat(x.getText().toString());
 
+            float vy = (vy2 - vy1) * (vx - vx1) / (vx2 - vx1) + vy1;
+            y.setText("" + vy);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            y.setText("");
+        }
     }
 
 }
