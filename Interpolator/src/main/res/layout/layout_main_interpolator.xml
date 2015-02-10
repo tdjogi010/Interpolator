@@ -196,7 +196,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Bits Pilani K.K. Birla Goa Campus"
+            android:text="BITS Pilani K.K. Birla Goa Campus"
             android:textColor="#FFFFFF"
             android:id="@+id/bitsg"
             android:layout_below="@+id/MAC"
