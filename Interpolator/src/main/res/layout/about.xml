@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar_about"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:background="@color/material_blue_grey_800"/>
 
     <ScrollView  android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
 <LinearLayout
+    android:paddingTop="@dimen/padding"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="About"
-        android:textColor="#00FFFF"
-        android:textStyle="bold"
-        android:id="@+id/textView"
-        android:layout_marginTop="30dp"
-        android:layout_gravity="center_horizontal" />
-
-    <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/para1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -36,10 +37,10 @@
         android:text="@string/about_info1"
         android:gravity="center" />
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/para2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:textColor="#FFFFFF"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:paddingLeft="@dimen/padding"
@@ -53,7 +54,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Credits"
-        android:id="@+id/textView3"
+        android:id="@+id/credits"
         android:textColor="#00FFFF"
         android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal"
@@ -63,7 +64,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Mudit Dangi"
-        android:id="@+id/textView4"
+        android:id="@+id/MD"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         android:layout_marginTop="3dp"
@@ -74,7 +75,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Tejas Jogi"
-        android:id="@+id/textView10"
+        android:id="@+id/TJ"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         android:layout_marginBottom="20dp"
