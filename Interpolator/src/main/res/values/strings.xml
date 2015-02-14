@@ -4,6 +4,11 @@
     <string name="app_name">Interpolator</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="about_title">About</string>
+    <string name="name_mudit">Mudit Dangi</string>
+    <string name="credits_title">Credits</string>
+    <string name="name_tejas">Tejas Jogi</string>
+
     <string name="about_info1">Interpolator is an application built for the purpose of solving frustrating rigorous thermodynamics calculation called INTERPOLATION.</string>
     <string name="about_info2">Logic : User needs to input 5 values i.e. 4 known (x1 ,y1 ,x2 ,y2 ) data values corresponding to the boundaries and 1 known (x) data value corresponding to the unknown state to find other unknown (y) data value. As soon as the 5 values are entered the corresponding unknown quantity of unknown state is displayed as \'y\'.</string>
 </resources>

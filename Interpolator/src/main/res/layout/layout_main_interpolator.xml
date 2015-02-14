@@ -4,14 +4,6 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/my_toolbar"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:minHeight="?attr/actionBarSize"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        android:background="@color/material_blue_grey_800"/>
 
     <ScrollView  android:layout_width="fill_parent"
         android:background="@drawable/background"
@@ -230,6 +222,17 @@
             android:layout_alignLeft="@id/bitsg"
             android:layout_alignStart="@id/bitsg"
             android:layout_above="@+id/et_x1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plot the Graph"
+            android:id="@+id/b_plot"
+            android:layout_below="@+id/tv_y"
+            android:layout_alignRight="@+id/bitsg"
+            android:layout_alignEnd="@+id/bitsg"
+            android:layout_alignLeft="@+id/tv_res"
+            android:layout_alignStart="@+id/tv_res" />
 
     </RelativeLayout>
     </ScrollView>

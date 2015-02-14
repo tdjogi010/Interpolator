@@ -1,22 +1,28 @@
 package com.mac.interpolator.interpolator;
 
+import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.view.inputmethod.InputMethodManager;
 
-public class Main_interpolator extends ActionBarActivity implements TextWatcher {
+public class Main_interpolator extends ActionBarActivity implements Main_fragment.OnPlotClickListener {
 
-    EditText et_y2, et_y1, et_x2, et_x1, et_x;
-    TextView y,x1,x2,y1,y2,x,result,dev,mac,bitsg;
-    static Typeface fontthin,font,fontbold;
+    @Override
+    public void onBackPressed() {
+        if (getFragmentManager().getBackStackEntryCount() > 0){
+            getFragmentManager().popBackStackImmediate();
+            getFragmentManager().beginTransaction().commit();
+        } else {
+            super.onBackPressed();
+        }
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,54 +30,17 @@ public class Main_interpolator extends ActionBarActivity implements TextWatcher 
         super.onCreate(savedInstanceState);
         //ActionBar actionbar=getActionBar();
         //actionbar.show();
-        setContentView(R.layout.layout_main_interpolator);
+        setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
+        Main_fragment main_fragment = new Main_fragment();
+        getFragmentManager().beginTransaction().add(R.id.fragment,main_fragment,"main_fragment")
+                .commit();
 
 
-        font= Typeface.createFromAsset(getAssets(), "fonts/Roboto-Regular.ttf");
-        fontthin= Typeface.createFromAsset(getAssets(), "fonts/Roboto-Thin.ttf");
-        fontbold=Typeface.createFromAsset(getAssets(), "fonts/Roboto-Bold.ttf");
 
-        et_y2 = (EditText) findViewById(R.id.et_y2);
-        et_y2.setTypeface(font,Typeface.NORMAL);
-        et_y1 = (EditText) findViewById(R.id.et_y1);
-        et_y1.setTypeface(font,Typeface.NORMAL);
-        et_x2 = (EditText) findViewById(R.id.et_x2);
-        et_x2.setTypeface(font,Typeface.NORMAL);
-        et_x1 = (EditText) findViewById(R.id.et_x1);
-        et_x1.setTypeface(font, Typeface.NORMAL);
-        et_x = (EditText) findViewById(R.id.et_x);
-        et_x.setTypeface(font, Typeface.NORMAL);
-        y = (TextView) findViewById(R.id.tv_res);
-        y.setTypeface(font, Typeface.NORMAL);
-        x = (TextView) findViewById(R.id.tv_x);
-        x.setTypeface(font,Typeface.NORMAL);
-        x1 = (TextView) findViewById(R.id.tv_x1);
-        x1.setTypeface(font,Typeface.NORMAL);
-        x2 = (TextView) findViewById(R.id.tv_x2);
-        x2.setTypeface(font,Typeface.NORMAL);
-        y1 = (TextView) findViewById(R.id.tv_y1);
-        y1.setTypeface(font,Typeface.NORMAL);
-        y2 = (TextView) findViewById(R.id.tv_y2);
-        y2.setTypeface(font,Typeface.NORMAL);
-        y2 = (TextView) findViewById(R.id.tv_y2);
-        y2.setTypeface(font,Typeface.NORMAL);
-        result = (TextView) findViewById(R.id.tv_res);
-        result.setTypeface(font,Typeface.NORMAL);
-        dev = (TextView) findViewById(R.id.dev);
-        dev.setTypeface(font,Typeface.NORMAL);
-        mac = (TextView) findViewById(R.id.MAC);
-        mac.setTypeface(font,Typeface.BOLD);
-        bitsg = (TextView) findViewById(R.id.bitsg);
-        bitsg.setTypeface(font,Typeface.NORMAL);
 
-        et_y2.addTextChangedListener(this) ;
-        et_y1.addTextChangedListener(this) ;
-        et_x2.addTextChangedListener(this) ;
-        et_x1.addTextChangedListener(this) ;
-        et_x.addTextChangedListener(this) ;
 
     }
 
@@ -103,30 +72,28 @@ public class Main_interpolator extends ActionBarActivity implements TextWatcher 
 
 
     @Override
-    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-    }
-
-    @Override
-    public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-    }
-
-    @Override
-    public void afterTextChanged(Editable s) {
+    public void OnPlotClick(InterpolatorPoints interpolatorPoints) {
         try {
-            float vy2 = Float.parseFloat(et_y2.getText().toString());
-            float vy1 = Float.parseFloat(et_y1.getText().toString());
-            float vx2 = Float.parseFloat(et_x2.getText().toString());
-            float vx1 = Float.parseFloat(et_x1.getText().toString());
-            float vx = Float.parseFloat(et_x.getText().toString());
-            float vy = (vy2 - vy1) * (vx - vx1) / (vx2 - vx1) + vy1;
-            y.setText("" + vy);
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-            y.setText("");
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }catch (NullPointerException e){
+            Log.d("Exception","Lite");
         }
-    }
 
+        Graph_Fragment graph_fragment = new Graph_Fragment();
+        Bundle bundle = new Bundle();
+        bundle.putFloat("x",interpolatorPoints.x);
+        bundle.putFloat("y",interpolatorPoints.y);
+        bundle.putFloat("x1",interpolatorPoints.x1);
+        bundle.putFloat("x2",interpolatorPoints.x2);
+        bundle.putFloat("y1",interpolatorPoints.y1);
+        bundle.putFloat("y2", interpolatorPoints.y2);
+        graph_fragment.setArguments(bundle);
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment, graph_fragment, "graph_fragmet");
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+    }
 }
 

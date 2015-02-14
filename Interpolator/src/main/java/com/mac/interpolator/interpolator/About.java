@@ -1,7 +1,5 @@
 package com.mac.interpolator.interpolator;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -28,15 +26,15 @@ public class About extends ActionBarActivity {
         /*abt = (TextView) findViewById(R.id.about);
         abt.setTypeface(Main_interpolator.font, Typeface.BOLD);*/
         cred = (TextView) findViewById(R.id.credits);
-        cred.setTypeface(Main_interpolator.font,Typeface.BOLD);
+        cred.setTypeface(Main_fragment.font,Typeface.BOLD);
         par1 = (TextView) findViewById(R.id.para1);
-        par1.setTypeface(Main_interpolator.font,Typeface.NORMAL);
+        par1.setTypeface(Main_fragment.font,Typeface.NORMAL);
         par2 = (TextView) findViewById(R.id.para2);
-        par2.setTypeface(Main_interpolator.font,Typeface.NORMAL);
+        par2.setTypeface(Main_fragment.font,Typeface.NORMAL);
         md = (TextView) findViewById(R.id.MD);
-        md.setTypeface(Main_interpolator.font,Typeface.BOLD);
+        md.setTypeface(Main_fragment.font,Typeface.BOLD);
         tj = (TextView) findViewById(R.id.TJ);
-        tj.setTypeface(Main_interpolator.font,Typeface.BOLD);
+        tj.setTypeface(Main_fragment.font,Typeface.BOLD);
     }
 
 }
