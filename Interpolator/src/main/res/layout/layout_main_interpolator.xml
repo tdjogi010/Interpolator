@@ -161,6 +161,41 @@
             android:layout_alignLeft="@+id/et_y2"
             android:layout_alignStart="@+id/et_y2" />
 
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/tv_res"
+            android:gravity="center_horizontal"
+            android:layout_alignLeft="@id/et_x"
+            android:layout_alignStart="@id/et_x"
+            android:layout_alignTop="@id/tv_y"
+            android:textColor="#FFFFFF"
+            android:layout_alignEnd="@id/et_x"
+            android:layout_alignRight="@id/et_x"
+            android:layout_alignBottom="@id/tv_y"
+            android:layout_marginLeft="5dp"
+            android:layout_above="@+id/b_plot" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plot the Graph"
+            android:id="@+id/b_plot"
+            android:background="@color/link_text_material_light"
+            android:layout_marginTop="20dp"
+            android:textColor="#FFFFFF"
+            android:layout_alignStart="@id/tv_y"
+            android:layout_alignLeft="@id/tv_y"
+            android:layout_alignEnd="@id/et_x"
+            android:layout_alignRight="@id/et_x"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/tv_y"
+            android:layout_centerHorizontal="true"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -168,9 +203,8 @@
             android:text="Developers"
             android:textColor="#00FFFF"
             android:id="@+id/dev"
-            android:layout_below="@+id/tv_y"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="62dp" />
+            android:layout_below="@id/b_plot"
+            android:layout_centerHorizontal="true" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -194,21 +228,6 @@
             android:layout_below="@+id/MAC"
             android:layout_centerHorizontal="true" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/tv_res"
-            android:gravity="center_horizontal"
-            android:layout_alignLeft="@id/et_x"
-            android:layout_alignStart="@id/et_x"
-            android:layout_alignTop="@id/tv_y"
-            android:textColor="#FFFFFF"
-            android:layout_alignEnd="@id/et_x"
-            android:layout_alignRight="@id/et_x"
-            android:layout_marginLeft="5dp"
-            android:layout_above="@+id/dev" />
-
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -222,17 +241,6 @@
             android:layout_alignLeft="@id/bitsg"
             android:layout_alignStart="@id/bitsg"
             android:layout_above="@+id/et_x1" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Plot the Graph"
-            android:id="@+id/b_plot"
-            android:layout_below="@+id/tv_y"
-            android:layout_alignRight="@+id/bitsg"
-            android:layout_alignEnd="@+id/bitsg"
-            android:layout_alignLeft="@+id/tv_res"
-            android:layout_alignStart="@+id/tv_res" />
 
     </RelativeLayout>
     </ScrollView>
