@@ -12,15 +12,14 @@ import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.GraphViewSeries;
 import com.jjoe64.graphview.LineGraphView;
 
+import java.math.BigDecimal;
+
 /**
  * Created by tj on 2/14/15.
  */
 public class Graph_Fragment extends Fragment {
 
     InterpolatorPoints interpolatorPoints;
-
-    //LineGraphSeries lineGraphSeries = new LineGraphSeries(new  )
-
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.graph_fragment,container,false);
@@ -32,6 +31,17 @@ public class Graph_Fragment extends Fragment {
         Float y2=getArguments().getFloat("y2");
         interpolatorPoints = new InterpolatorPoints(x,y,x1,x2,y1,y2);
         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_graph);
+        String legend="y = ";
+        float r = (y2-y1)/(x2-x1);
+        r=round(r,2);
+        legend=legend+r+"x ";
+        float c = r*-1*x1;
+        c=round(c,2);
+        if(c>0)
+            legend=legend+"+ "+c;
+        else if (c<0)
+            legend=legend+" "+c;
+
         LineGraphView lineGraphView = new LineGraphView(getActivity(),"Mygraph");
         GraphView.GraphViewData graphViewData[] = new GraphView.GraphViewData[3];
         if (x>x1 && x>x2){
@@ -65,15 +75,15 @@ public class Graph_Fragment extends Fragment {
                 graphViewData[1] =new GraphView.GraphViewData(x1,y1);
             }
         }
-        GraphViewSeries graphViewSeries = new GraphViewSeries("Graph",
+        GraphViewSeries graphViewSeries = new GraphViewSeries(legend,
                 new GraphViewSeries.GraphViewSeriesStyle(Color.rgb(200,0,0),3),graphViewData);
         lineGraphView.addSeries(graphViewSeries);
 
-        //lineGraphView.setShowLegend(true);
+        lineGraphView.setShowLegend(true);
         lineGraphView.setLegendAlign(GraphView.LegendAlign.BOTTOM);
         lineGraphView.getGraphViewStyle().setLegendBorder(20);
         lineGraphView.getGraphViewStyle().setLegendSpacing(30);
-        lineGraphView.getGraphViewStyle().setLegendWidth(300);
+        lineGraphView.getGraphViewStyle().setLegendWidth(350);
 
         lineGraphView.setViewPort(2, 10);
         lineGraphView.setScalable(true);
@@ -88,4 +98,12 @@ public class Graph_Fragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+
+
+    public static float round(float d, int decimalPlace) {
+        BigDecimal bd = new BigDecimal(Float.toString(d));
+        bd = bd.setScale(decimalPlace, BigDecimal.ROUND_HALF_UP);
+        return bd.floatValue();
+    }
+
 }

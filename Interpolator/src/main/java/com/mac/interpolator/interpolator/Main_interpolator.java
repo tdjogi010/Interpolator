@@ -34,10 +34,11 @@ public class Main_interpolator extends ActionBarActivity implements Main_fragmen
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
-        Main_fragment main_fragment = new Main_fragment();
-        getFragmentManager().beginTransaction().add(R.id.fragment,main_fragment,"main_fragment")
-                .commit();
-
+        if (savedInstanceState==null) {
+            Main_fragment main_fragment = new Main_fragment();
+            getFragmentManager().beginTransaction().add(R.id.fragment, main_fragment, "main_fragment")
+                    .commit();
+        }
 
 
 

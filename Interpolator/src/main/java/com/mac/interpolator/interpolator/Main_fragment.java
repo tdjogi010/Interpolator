@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by tj on 2/14/15.
@@ -42,6 +43,7 @@ public class Main_fragment extends Fragment implements TextWatcher {
         font= Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Regular.ttf");
         fontthin= Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Thin.ttf");
         fontbold=Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Bold.ttf");
+        setRetainInstance(true);
 
         et_y2 = (EditText) view.findViewById(R.id.et_y2);
         et_y2.setTypeface(font,Typeface.NORMAL);
@@ -91,8 +93,11 @@ public class Main_fragment extends Fragment implements TextWatcher {
 
                 } catch (NumberFormatException e) {
                     e.printStackTrace();
+                    Toast.makeText(getActivity(),"Plz enter all values",Toast.LENGTH_SHORT).show();
+                    return;
 
                 }
+
 
                 InterpolatorPoints interpolatorPoints = new InterpolatorPoints(vx,vy,vx1,vx2,vy1,vy2);
                 onPlotClickListener.OnPlotClick(interpolatorPoints);
