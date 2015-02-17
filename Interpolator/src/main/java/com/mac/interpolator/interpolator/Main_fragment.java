@@ -55,7 +55,7 @@ public class Main_fragment extends Fragment implements TextWatcher {
         et_x1.setTypeface(font, Typeface.NORMAL);
         et_x = (EditText) view.findViewById(R.id.et_x);
         et_x.setTypeface(font, Typeface.NORMAL);
-        y = (TextView) view.findViewById(R.id.tv_res);
+        y = (TextView) view.findViewById(R.id.tv_res); //TODO
         y.setTypeface(font, Typeface.NORMAL);
         x = (TextView) view.findViewById(R.id.tv_x);
         x.setTypeface(font,Typeface.NORMAL);
@@ -69,7 +69,7 @@ public class Main_fragment extends Fragment implements TextWatcher {
         y2.setTypeface(font,Typeface.NORMAL);
         y2 = (TextView) view.findViewById(R.id.tv_y2);
         y2.setTypeface(font,Typeface.NORMAL);
-        result = (TextView) view.findViewById(R.id.tv_res);
+        result = (TextView) view.findViewById(R.id.tv_res); //TODO Both accessing same textviews?
         result.setTypeface(font,Typeface.NORMAL);
         dev = (TextView) view.findViewById(R.id.dev);
         dev.setTypeface(font,Typeface.NORMAL);
@@ -93,7 +93,7 @@ public class Main_fragment extends Fragment implements TextWatcher {
 
                 } catch (NumberFormatException e) {
                     e.printStackTrace();
-                    Toast.makeText(getActivity(),"Plz enter all values",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),"Please enter all the values",Toast.LENGTH_SHORT).show();
                     return;
 
                 }
