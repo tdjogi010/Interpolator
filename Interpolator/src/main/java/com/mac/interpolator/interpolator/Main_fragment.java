@@ -90,7 +90,6 @@ public class Main_fragment extends Fragment implements TextWatcher {
                     vx1 = Float.parseFloat(et_x1.getText().toString());
                     vx = Float.parseFloat(et_x.getText().toString());
                     vy = Float.parseFloat(y.getText().toString());
-
                 } catch (NumberFormatException e) {
                     e.printStackTrace();
                     Toast.makeText(getActivity(),"Please enter all the values",Toast.LENGTH_SHORT).show();
@@ -98,9 +97,13 @@ public class Main_fragment extends Fragment implements TextWatcher {
 
                 }
 
-
-                InterpolatorPoints interpolatorPoints = new InterpolatorPoints(vx,vy,vx1,vx2,vy1,vy2);
-                onPlotClickListener.OnPlotClick(interpolatorPoints);
+                if(!y.getText().toString().equals("NaN") && !y.getText().toString().equals("Infinity")  && !y.getText().toString().equals("-Infinity")) {
+                    InterpolatorPoints interpolatorPoints = new InterpolatorPoints(vx, vy, vx1, vx2, vy1, vy2);
+                    onPlotClickListener.OnPlotClick(interpolatorPoints);
+                }
+                else{
+                    Toast.makeText(getActivity(),"Cannot plot a graph",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
